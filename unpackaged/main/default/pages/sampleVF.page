@@ -1,0 +1,18 @@
+<apex:page >
+    <apex:includeLightning />
+    <div  id="compContainer" />
+  <script>
+     $Lightning.use("c:SampleApplication", function() {
+         $Lightning.createComponent("c:SampleComponent",
+             {PassesValueFromVF:"Micro System"},
+             "compContainer",
+             function(cmp) {
+          console.log("c:VFPageApp loaded successfully in VF page");
+             }
+         );
+     });
+  </script>
+
+<flow:interview name="Activate_Contracts_Access"/>
+
+</apex:page>

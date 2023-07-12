@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <label>Trailblazer</label>
+    <navType>Standard</navType>
+    <tabs>standard-home</tabs>
+    <tabs>standard-AnalyticsDataManager</tabs>
+    <tabs>standard-Feed</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>standard-Dashboard</tabs>
+    <tabs>Waypoint__c</tabs>
+    <tabs>Quick__c</tabs>
+    <tabs>Your</tabs>
+    <tabs>From_Schema_Builder__c</tabs>
+    <tabs>SOSL__c</tabs>
+    <tabs>Standard</tabs>
+    <tabs>Standard_Account</tabs>
+    <tabs>SA</tabs>
+    <tabs>Lookup__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Trailblazer_UtilityBar</utilityBar>
+</CustomApplication>

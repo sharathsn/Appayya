@@ -101,6 +101,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>MixedDMLErrorDemo</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>MixedDMLErrorTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>OrderItem</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -138,6 +146,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>UpdateRelatedObjectBatch</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>UtilFutureDemo</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>

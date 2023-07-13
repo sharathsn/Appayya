@@ -251,7 +251,8 @@
             <default>false</default>
         </values>
     </picklistValues>
-    <picklistValues>
+    
+        <picklistValues>
         <picklist>To_Global__c</picklist>
         <values>
             <fullName>No</fullName>

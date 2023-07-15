@@ -236,6 +236,10 @@
         <apexClass>SiteRegisterControllerTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>limitbatch</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
     <custom>false</custom>
     <loginIpRanges>
         <endAddress>255.255.255.0</endAddress>

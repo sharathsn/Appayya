@@ -1,13 +1,13 @@
 public class limitbatch implements Database.Batchable<sobject>{
 public Database.QueryLocator start(Database.BatchableContext con)
 {
-   return database.getQueryLocator('select id,name from account'); 
+   return database.getQueryLocator('select id,name from account where createddate=last_n_days:2'); 
 }
 public void execute (Database.BatchableContext con,List<sobject> scope)
 {
     for (Account acc : (List<account>)scope) {
-    List<Contact> contacts = [SELECT Id, Name FROM Contact WHERE AccountId = :acc.Id];
-    // Perform some logic with the contacts
+    acc.name=acc.name+'All';
+    update acc;
 }
 
 }

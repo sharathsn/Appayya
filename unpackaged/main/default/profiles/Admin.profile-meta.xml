@@ -354,6 +354,10 @@
         <enabled>true</enabled>
     </pageAccesses>
     <pageAccesses>
+        <apexPage>sampleVF1</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
         <apexPage>test</apexPage>
         <enabled>true</enabled>
     </pageAccesses>

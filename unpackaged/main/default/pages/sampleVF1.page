@@ -1,0 +1,24 @@
+<apex:page showHeader="false" sidebar="false">
+    
+    <!-- This loads the JavaScript file needed to use Lightning Components for Visualforce-->    
+    <apex:includeLightning />    
+    
+    <!-- div tag act as locator while calling Lightning.createComponent -->    
+    <div id="lightning" />
+    
+    <script>
+    
+    $Lightning.use("c:AuraComponentApp", function() {
+        
+        $Lightning.createComponent
+        ("c:AuraComponent","","lightning",function(cmp) {
+             
+             // do some stuff
+             
+         });
+        
+    });
+    
+    </script>
+    
+</apex:page>

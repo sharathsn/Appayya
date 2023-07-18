@@ -1,4 +1,4 @@
-<apex:page showHeader="false" sidebar="false">
+<apex:page showHeader="false" sidebar="false" controller="Forvf">
     
     <!-- This loads the JavaScript file needed to use Lightning Components for Visualforce-->    
     <apex:includeLightning />    
@@ -20,5 +20,6 @@
     });
     
     </script>
-    
+    <apex:form >
+    <apex:commandButton value="click"  action="{!vf}"></apex:commandButton></apex:form>
 </apex:page>

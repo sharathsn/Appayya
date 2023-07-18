@@ -17,6 +17,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>AsyncCalculator</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>BatchJob</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -166,6 +170,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>WrapperCls</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>calculator</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>

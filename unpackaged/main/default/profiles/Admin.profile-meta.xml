@@ -21,6 +21,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>AsyncMyWebFromWSDL</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>BatchJob</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -114,6 +118,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>MixedDMLErrorTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>MyWebFromWSDL</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>MyWebService</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>

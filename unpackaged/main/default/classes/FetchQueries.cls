@@ -5,6 +5,6 @@ public class FetchQueries {
     }
     @AuraEnabled
     public static List <Account> fetchAccounts() {
-        return [ SELECT id, name     FROM Account  ORDER BY Name ];
+        return [ SELECT  name     FROM Account  ORDER BY Name limit 10];
     }
 }

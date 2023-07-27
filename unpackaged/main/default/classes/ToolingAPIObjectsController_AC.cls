@@ -4,7 +4,7 @@ ToolingAPIObjectsController_AC {
     get;
     set;
   }
-  public List < MyWrapper > wrapper {
+  public List <MyWrapper> wrapper {
     get;
     set;
   }
@@ -16,33 +16,33 @@ ToolingAPIObjectsController_AC {
     get;
     set;
   }
-  public List < SelectOption >
-    listOfValues = new List < SelectOption > ();
+  public List <SelectOption>
+    listOfValues = new List <SelectOption> ();
   public String cusObjId {
     get;
     set;
   }
-  public List < String >
+  public List <String>
     customObjectsList {
       get;
       set;
     }
-  public List < String >
+  public List <String>
     customSettingsList {
       get;
       set;
     }
-  public List < String >
+  public List <String>
     customMetaDataList {
       get;
       set;
     }
-  public List < String >
+  public List <String>
     standardObjectsList {
       get;
       set;
     }
-  public List < String >
+  public List <String>
     customFieldNameList {
       get;
       set;
@@ -50,13 +50,13 @@ ToolingAPIObjectsController_AC {
 
   public ToolingApiObjectsController_AC() {
     customObjectsList =
-      new List < String > ();
+      new List <String> ();
     standardObjectsList =
-      new List < String > ();
+      new List <String> ();
     customSettingsList =
-      new List < String > ();
+      new List <String> ();
     customMetaDataList =
-      new List < String > ();
+      new List <String> ();
     for (Schema.SObjectType objTyp:
       Schema.getGlobalDescribe().Values()) {
 
@@ -77,7 +77,7 @@ ToolingAPIObjectsController_AC {
     }
   }
 
-  public List < SelectOption >
+  public List <SelectOption>
     getlistOfValues() {
       listOfValues.clear();
       if (toolingObjectName == 'CustomObjects') {
@@ -97,6 +97,11 @@ ToolingAPIObjectsController_AC {
           listOfValues.add(new SelectOption(cusmetdata, cusmetdata));
         }
       }
+        else if (toolingObjectName == 'ValidationRule') {
+        for (String cusmetdata: customMetaDataList) {
+          listOfValues.add(new SelectOption(cusmetdata, cusmetdata));
+        }
+      }
       return listOfValues;
     }
 
@@ -111,11 +116,11 @@ ToolingAPIObjectsController_AC {
         endpoint = baseURL + '/services/data/v38.0/tooling/query/?q=SELECT+Id+FROM+CustomObject+WHERE+DeveloperName = \'' + selectedValue + '\'';
         getListOfCustomField(endpoint);
         if (cusObjId != NULL) {
-          endpoint = baseURL + '/services/data/v38.0/tooling/query/?q=SELECT+Id+DeveloperName+FROM+CustomField+WHERE+TableEnumORId = \'' + cusObjId +'\'';
+          endpoint = baseURL + '/services/data/v38.0/tooling/query/?q=SELECT+Id,DeveloperName+FROM+CustomField+WHERE+TableEnumORId = \'' + cusObjId +'\'';
           getListOfCustomField(endpoint);
         }
       } else {
-        endpoint = baseURL + '/services/data/v38.0/tooling/query/?q=SELECT+Id+DeveloperName+FROM+CustomField+WHERE+TableEnumORId = \''+ selectedValue + '\'';
+        endpoint = baseURL + '/services/data/v38.0/tooling/query/?q=SELECT+Id,DeveloperName+FROM+CustomField+WHERE+TableEnumORId = \''+ selectedValue + '\'';
         getListOfCustomField(endpoint);
       }
     }
@@ -143,13 +148,12 @@ ToolingAPIObjectsController_AC {
     }
   }
 
-  public void getListOfCustomField
-    (String endpoint) {
+  public void getListOfCustomField (String endpoint) {
 
-      List < String > customFieldIdList;
+      List <String> customFieldIdList;
       String response;
       HttpRequest req = new HttpRequest();
-      req.setHeader('Authorization','Bearer ' + UserInfo.getSessionID());
+      req.setHeader('Authorization','Bearer' + UserInfo.getSessionID());
       req.setHeader('Content-Type', 'application/json');
       req.setEndpoint(endpoint);
       req.setMethod('GET');
@@ -159,8 +163,8 @@ ToolingAPIObjectsController_AC {
       system.debug(response);
       if (response.contains('"entityTypeName":"CustomObject"')) {
         JSONParser parser = JSON.createParser(response);
-        customFieldNameList = new List < String > ();
-        customFieldIdList = new List < String > ();
+        customFieldNameList = new List <String> ();
+        customFieldIdList = new List <String> ();
         while (parser.nextToken() != null) {
           if ((parser.getCurrentToken() == JSONToken.FIELD_NAME) && ((parser.getText() == 'Id'))) {
             parser.nextToken();
@@ -169,8 +173,8 @@ ToolingAPIObjectsController_AC {
         }
       } else {
         JSONParser parser = JSON.createParser(response);
-        customFieldNameList = new List < String > ();
-        customFieldIdList = new List < String > ();
+        customFieldNameList = new List <String> ();
+        customFieldIdList = new List <String> ();
         while (parser.nextToken() != null) {
           if ((parser.getCurrentToken() == JSONToken.FIELD_NAME) && ((parser.getText() == 'DeveloperName'))) {
             parser.nextToken();
@@ -182,8 +186,8 @@ ToolingAPIObjectsController_AC {
           }
         }
 
-        wrapper = new List < MyWrapper > ();
-        for (Integer i = 0; i < customFieldNameList.size(); i++)
+        wrapper = new List <MyWrapper> ();
+        for (Integer i = 0; i<customFieldNameList.size(); i++)
           wrapper.add(new MyWrapper(customFieldNameList[i],
             customFieldIdList[i]));
         //if (customFieldNameList.size() == 0) {

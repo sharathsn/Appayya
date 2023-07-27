@@ -169,6 +169,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ToolingAPIObjectsController_AC</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>UpdateRelatedObjectBatch</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -367,6 +371,10 @@
     </pageAccesses>
     <pageAccesses>
         <apexPage>StdExceptionTemplate</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>ToolingAPI</apexPage>
         <enabled>true</enabled>
     </pageAccesses>
     <pageAccesses>

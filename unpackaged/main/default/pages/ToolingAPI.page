@@ -1,0 +1,136 @@
+<apex:page controller="ToolingAPIObjectsController_AC">       
+
+    <apex:form >           
+
+        <apex:pageBlock title="Tooling API">              
+
+            <apex:pageMessages />              
+
+            <apex:pageblockSection >                 
+
+                <apex:pageBlockSectionItem >                    
+
+                    <apex:outputLabel value="Object Types"/>                     
+
+                    <apex:outputPanel >                         
+
+                        <apex:selectList value="{!toolingObjectName}"  
+
+                        multiselect="false" size="1">                                 
+
+                     <apex:selectOption itemValue=""  itemLabel="-- Select --">                
+
+                   </apex:selectOption>                             
+
+                            <apex:selectOption itemValue="StandardObjects"        
+
+                           itemLabel="Standard Objects ({!standardObjectsList.size})"/>                             
+
+                            <apex:selectOption itemValue="CustomObjects"        
+
+                            itemLabel="Custom Objects ({!customObjectsList.size})"/>  
+
+                            <apex:selectOption itemValue="CustomSettings"    
+
+                            itemLabel="Custom Settings ({!customSettingsList.size})"/>                              
+
+                            <apex:selectOption itemValue="CustomMetaData"  
+
+                             itemLabel="Custom MetaData ({!customMetaDataList.size})"/>                                  
+
+                            <apex:actionSupport event="onchange" action="{!reset}"     
+
+                     reRender="Picklistvalue,
+CustomFieldList"/>                             
+
+                        </apex:selectList>                         
+
+                    </apex:outputPanel>                     
+
+                </apex:pageBlockSectionItem>                 
+
+            </apex:pageblockSection>               
+
+            <apex:pageBlockSection id="Picklistvalue">                   
+
+                <apex:pageBlockSectionItem >                     
+
+                    <apex:outputLabel value="List of Objects"/>                
+
+                   <apex:outputPanel >                         
+
+                        <apex:selectList size="1" value="{!selectedValue}">                             
+
+                      <apex:selectOption itemValue="" itemLabel="-- Select --">       
+
+                        </apex:selectOption>                             
+
+                        <apex:selectOptions value="{!listOfValues }"> 
+
+                       </apex:selectOptions>                             
+
+                            <apex:actionSupport event="onchange"  
+
+                            action="{!getListOfObjects}" status="processing"  
+
+                            reRender="CustomFieldList,processing"/>                             
+
+                        </apex:selectList>                         
+
+                    </apex:outputPanel>    
+
+                </apex:pageBlockSectionItem>  
+
+            </apex:pageBlockSection>        
+
+        </apex:pageBlock>  
+
+        <apex:actionStatus id="processing">             
+
+            <apex:facet name="start">                 
+
+                <apex:outputPanel >                     
+
+                    Processing...                     
+
+                    <img src="/img/loading.gif" />                     
+
+                </apex:outputPanel>                 
+
+            </apex:facet>             
+
+        </apex:actionStatus>                 
+
+        <apex:outputPanel id="CustomFieldList">  
+
+            <apex:pageMessages />       
+
+            <apex:pageblock title="Custom Field List" rendered="{!showBlock}">  
+
+                <apex:outputLabel value="Total number of Custom   Fields{!customFieldNameList.size} "/>                   
+
+                <apex:pageBlockTable value="{!wrapper}"  var="wrap">                       
+
+                    <apex:column headerValue="Custom Field Id">                           
+
+                        <apex:outputLink target="_blank"  
+
+                          value="/{!wrap.customFieldId}"> {!wrap.customFieldId} 
+
+                        </apex:outputLink>                           
+
+                    </apex:column>                
+
+                    <apex:column headerValue="Custom Field API Name"     
+
+                   value="{!wrap.customFieldName}" />                     
+
+                </apex:pageblockTable>                 
+
+            </apex:pageblock>             
+
+        </apex:outputPanel>   
+
+    </apex:form>      
+
+</apex:page>

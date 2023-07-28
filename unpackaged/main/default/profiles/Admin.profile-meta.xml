@@ -273,10 +273,6 @@
         <enabled>true</enabled>
     </classAccesses>
     <custom>false</custom>
-    <loginIpRanges>
-        <endAddress>255.255.255.0</endAddress>
-        <startAddress>0.0.0.0</startAddress>
-    </loginIpRanges>
     <pageAccesses>
         <apexPage>CommunitiesLanding</apexPage>
         <enabled>true</enabled>

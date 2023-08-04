@@ -7,6 +7,7 @@ public without sharing class TestSharing {
         System.runas(u)
         {
             system.System.debug(WithSharing.getAccount());
+            system.System.debug(WithoutSharing.getAccount());
         }
     }
 }

@@ -1,6 +1,7 @@
 public with sharing class AccountController {
-    @AuraEnabled(cacheable=true)
-    public static List<Account> getAccountData() {
-        return [SELECT Id, Name, Industry, Phone, Website FROM Account];
+    @AuraEnabled
+    public static List<Account> getAccounts(Integer pageNumber, Integer pageSize) {
+        Integer offset = (pageNumber - 1) * pageSize;
+        return [SELECT Id, Name, Industry FROM Account ORDER BY Name LIMIT :pageSize OFFSET :offset];
     }
 }

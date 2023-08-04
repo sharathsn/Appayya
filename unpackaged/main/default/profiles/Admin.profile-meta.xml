@@ -185,6 +185,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>TestSharing</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ToolingAPIObjectsController_AC</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -202,6 +206,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>UtilFutureDemo1</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>WithSharing</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>WithoutSharing</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>

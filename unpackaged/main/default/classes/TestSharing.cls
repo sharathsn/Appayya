@@ -1,12 +1,12 @@
 @isTest
-public with sharing class TestSharing {
+public without sharing class TestSharing {
     @isTest(SeeAllData=true)
 
     public static void showSharing() {
-        User u =[select id from user where email='shettysharathsn@gmail.com' and profile.name='System Administrator'];
+        User u =[select id from user where username='appibangari@gmail.com'];
         System.runas(u)
         {
-            system.System.debug(WithoutSharing.getAccount());
+            system.System.debug(WithSharing.getAccount());
         }
     }
 }

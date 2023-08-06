@@ -1,4 +1,4 @@
-public with sharing class WithoutSharing {
+public without sharing class WithoutSharing {
     public static integer getAccount() {
         return [select id,with__c from Account].size();
     }

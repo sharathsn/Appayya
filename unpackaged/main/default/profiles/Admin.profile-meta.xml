@@ -310,6 +310,10 @@
     </classAccesses>
     <custom>false</custom>
     <pageAccesses>
+        <apexPage>AccountReadPage</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
         <apexPage>CommunitiesLanding</apexPage>
         <enabled>true</enabled>
     </pageAccesses>

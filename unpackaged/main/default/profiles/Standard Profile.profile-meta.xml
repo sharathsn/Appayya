@@ -3515,5 +3515,13 @@
         <tab>standard-WorkTypeGroup</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
+    <classAccesses>
+        <apexClass>AccountController1</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <pageAccesses>
+        <apexPage>AccountReadPage</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <userLicense>Salesforce Platform</userLicense>
 </Profile>

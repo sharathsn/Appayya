@@ -1,0 +1,17 @@
+<apex:page controller="AccountController1">
+    <h2>List of Accounts</h2>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Billing Street</th>
+        </tr>
+        <apex:repeat value="{!accountList}" var="acc">
+            <tr>
+                <td>{!acc.Name}</td>
+                <td>{!acc.Phone}</td>
+                <td>{!acc.BillingStreet}</td>
+            </tr>
+        </apex:repeat>
+    </table>
+</apex:page>

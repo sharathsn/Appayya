@@ -1,4 +1,4 @@
-public with sharing class WithSharing {
+public without sharing class WithSharing {
     public static integer getAccount() {
         return [select id,with__c from Account].size();
     }
@@ -11,8 +11,8 @@ public with sharing class WithSharing {
     }
     public static Void accListSharingTri() {
         List<Account> accList;
-        if(!schema.SObjectType.Account.fields.Active1__c.isAccessible())
-        accList = [select id from account where Active1__c='Yes'];
+        //if(schema.SObjectType.Account.fields.Active1__c.isupdateable())
+        accList = [select id,active1__c from account with system_mode];
  		system.debug(accList.size());
         integer i= accList.size();
         Account acc = new Account();

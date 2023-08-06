@@ -1,6 +1,8 @@
 trigger AccTrigger on Account (before insert) {
+integer i=1;
 For(Account acc: Trigger.new){
- List<Account> accList = [select id from account];
- system.debug(accList.size());
+if(i==1)
+ WithSharing.accListSharingTri();
+ i++;
 }
 }

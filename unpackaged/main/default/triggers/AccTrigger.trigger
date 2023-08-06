@@ -1,8 +1,8 @@
 trigger AccTrigger on Account (before insert) {
-integer i=1;
+if(ContactTriggerHandler.isFirstTime){
+        ContactTriggerHandler.isFirstTime = false;
 For(Account acc: Trigger.new){
-if(i==1)
  WithSharing.accListSharingTri();
- i++;
+}
 }
 }

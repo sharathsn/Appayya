@@ -1,4 +1,4 @@
-public with sharing class WithSharing {
+public without sharing class WithSharing {
     public static integer getAccount() {
         return [select id,with__c from Account].size();
     }
@@ -10,11 +10,11 @@ public with sharing class WithSharing {
         return [select id,with__c from Account];
     }
     public static Void accListSharingTri() {
-        List<Account> accList = [select id from account];
+        List<Account> accList = [select id,active1__c from account where Active1__c='Yes' ];
  		system.debug(accList.size());
         integer i= accList.size();
         Account acc = new Account();
-        acc.name='Umapathi1'+i;
+        acc.name=i+'Umapathi';
         insert acc;
     }
 }

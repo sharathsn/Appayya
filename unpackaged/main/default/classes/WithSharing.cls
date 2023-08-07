@@ -9,7 +9,7 @@ public  with sharing class WithSharing {
     public static List<Account> accListSharing() {
         return [select id,with__c from Account];
     }
-    public static Void accListSharingTri() {
+    public static Void accListSharingTri(List<Account> accl) {
         List<Account> accList;
         //if(schema.SObjectType.Account.fields.Active1__c.isupdateable())
         accList = [select id,active1__c from account];

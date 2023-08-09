@@ -308,6 +308,10 @@
         <apexClass>limitbatch</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>redirectToAccountTab</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
     <custom>false</custom>
     <pageAccesses>
         <apexPage>AccountReadPage</apexPage>

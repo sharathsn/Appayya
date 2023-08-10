@@ -305,6 +305,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>getSessionId_Cls</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>limitbatch</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -3314,6 +3318,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>TimeSlot.WorkTypeGroupId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>User.Session_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
